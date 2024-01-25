@@ -1,0 +1,53 @@
+{
+  "name": "frontend-challenge-boilerplate",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "concurrently --kill-others \"bun run tailwindcss --watch\" \"vite\"",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "tailwindcss": "tailwindcss -i ./src/global.css -o ./dist/index.css",
+    "build": "tsc && vite build && bun run tailwindcss",
+    "preview": "vite preview",
+    "dev:node": "concurrently \"tailwindcss -i ./src/global.css -o ./dist/index.css --watch\" \"vite\"",
+    "build:node": "tsc && vite build && npm run tailwindcss"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.8",
+    "pdfkit": "^0.14.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.3",
+    "shadcn-ui": "^0.8.0",
+    "streamifier": "^0.1.1",
+    "streamify-array": "^1.0.1",
+    "tailwind": "^4.0.0",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.3",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3",
+    "vite": "^4.5.2"
+  },
+  "files.associations": {
+    "*.scss": "postcss"
+  }
+}
